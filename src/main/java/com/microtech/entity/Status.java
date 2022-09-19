@@ -1,13 +1,12 @@
 package com.microtech.entity;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-@Data
 @Getter
-@Setter
-@Builder
-public class Status {
-    public static final int CREATED = 1;
-    public static final int DONE = 2;
+public enum Status {
+    CREATED ,
+    DONE;
 }

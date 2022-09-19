@@ -3,9 +3,8 @@ package com.microtech.common.utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
+
 
 public class DataUtils {
 	private static final Logger logger = LoggerFactory.getLogger(DataUtils.class);
