@@ -1,0 +1,49 @@
+{
+  "maxFileSize": 1234,
+  "forbiddenFolderNames": [
+    ".vscode",
+    ".node",
+    ".idea",
+    "node_modules"
+  ],
+  "allowedExtensions": [
+    "jpg",
+    "tiff",
+    "documents",
+    "gif",
+    "svg",
+    "go",
+    "png",
+    "js",
+    "docx",
+    "excel",
+    "txt",
+    "java",
+    "ppt",
+    "md",
+    "jpeg",
+    "adoc"
+  ],
+  "allowedBigFileExtensions": [
+    "jpg",
+    "excel",
+    "tiff",
+    "gif",
+    "svg",
+    "ppt",
+    "png",
+    "jpeg",
+    "docx"
+  ],
+  "allowedPublicProjects": [
+    "micro-documents",
+    "documents",
+    "456",
+    "devops"
+  ],
+  "allowedUserProjects": [
+    "hongeinh-documents",
+    "liempq-documents",
+    "thanhld-documents"
+  ]
+}
