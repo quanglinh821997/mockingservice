@@ -16,6 +16,8 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -26,22 +28,11 @@ import static com.microtech.common.utils.DataUtils.notNullOrEmpty;
 @Service
 public class JenkinsJobURLServiceImpl implements JenkinsJobURLService {
 
-    private String pushRuleConfigPath;
-
-
-
     @Value("${app.config.path}")
     private String configPath;
 
     @Override
     public ProjectRule getProjectRule() {
-//        pushRuleConfigPath = configPath.endsWith("/") ?
-//                (configPath + "rules_project.json") :
-//                (configPath + "/rules_project.json");
-//        String content = FileUtils.readFileToString(new File(pushRuleConfigPath), StandardCharsets.UTF_8);
-//        projectRule = JSonUtils.fromJson(content, ProjectRule.class);
-//        return projectRule;
-
         String content = null;
         try {
             assert notNullOrEmpty(configPath);
@@ -60,17 +51,9 @@ public class JenkinsJobURLServiceImpl implements JenkinsJobURLService {
 
     @Override
     public Object accept(JenkinsJobURLDTO jenkinsJobURLDTO) throws IOException {
-
-//        File file = new File("/home/quanglinh/mycode/jenkins-job.txt");
-//        String original = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
-//        JenkinsJobURLDTO originalDto = JSonUtils.fromJson(original, JenkinsJobURLDTO.class);
-//        String data = JSonUtils.toJson(originalDto);
-//        FileUtils.writeStringToFile(file, data, StandardCharsets.UTF_8);
-//        return FileUtils.readFileToString(file, StandardCharsets.UTF_8);
-
             String content = JSonUtils.toJson(jenkinsJobURLDTO);
-            FileUtils.writeStringToFile(new File("/home/quanglinh/mycode/jenkins-job.txt"), content, StandardCharsets.UTF_8);
-            return FileUtils.readFileToString(new File("/home/quanglinh/mycode/jenkins-job.txt"), StandardCharsets.UTF_8);
-
+            FileUtils.writeStringToFile(new File("/home/quanglinh/mycode/jenkins-job.txt"), content, StandardCharsets.UTF_8, true);
+            FileUtils.readFileToString(new File("/home/quanglinh/mycode/jenkins-job.txt"), StandardCharsets.UTF_8);
+        return "OK";
     }
 }
