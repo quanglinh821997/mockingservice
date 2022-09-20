@@ -13,4 +13,4 @@
 app:
   config:
     #    path: /config
-    path: .\config
+    path: ./config
